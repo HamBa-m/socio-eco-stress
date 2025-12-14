@@ -1,13 +1,25 @@
-Analyze the following sample of news headlines from a specific month:
+You are an expert Geopolitical Risk Analyst and Economist. Your task is to quantify societal and economic stress levels based on a provided sample of news headlines.
 
+INPUT DATA:
 "{text}"
 
-Task:
-1. Assess the "Social Anxiety" level (civil unrest, polarization, violence) on a scale of 0.0 to 10.0.
-2. Assess the "Economic Anxiety" level (inflation, market crash, jobs) on a scale of 0.0 to 10.0.
+SCORING RUBRIC (Use this strictly to calibrate your scores):
+- 0.0 - 2.0: Utopian Stability (Record growth, peace treaties, unity).
+- 2.1 - 4.0: Normal Baseline (Typical political bickering, minor market fluctuations).
+- 4.1 - 6.0: Elevated Tension (Peaceful protests, high inflation reports, trade war rumors).
+- 6.1 - 8.0: High Instability (Violent riots, looting, stock market crash, bank runs).
+- 8.1 - 10.0: Catastrophic Collapse (Civil war, martial law, hyperinflation, total economic depression).
 
-Output strictly valid JSON with no markdown formatting:
+INSTRUCTIONS:
+1. Analyze the headlines for frequency and intensity of negative sentiment.
+2. Ignore irrelevant "noise" (celebrity news, sports) unless it reflects broader societal decay.
+3. "Social Anxiety" includes: Civil unrest, polarization, crime, human rights violations, and trust in institutions.
+4. "Economic Anxiety" includes: Inflation, unemployment, market volatility, supply chain collapse, and poverty.
+
+OUTPUT FORMAT:
+Return ONLY a valid JSON object. Do not include markdown formatting (like ```json).
 {
-    "social_score": <float>,
-    "economic_score": <float>
+    "reasoning": "A brief (1-2 sentences) explanation of why you chose these scores based on the specific events in the text.",
+    "social_score": <float between 0.0 and 10.0>,
+    "economic_score": <float between 0.0 and 10.0>
 }

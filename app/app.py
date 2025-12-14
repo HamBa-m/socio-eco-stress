@@ -5,6 +5,7 @@ import joblib
 import numpy as np
 import os
 import time
+from dotenv import load_dotenv
 from groq import Groq
 from sentence_transformers import SentenceTransformer, util
 import torch
@@ -17,6 +18,12 @@ from datetime import datetime
 GROQ_API_KEY = os.getenv("GROQ_API_KEY") 
 NEWS_API_KEY = os.getenv("NEWSAPI_KEY")
 PROMPT_FILE = "prompt.txt"
+
+# Connect to Hugging Face CLI and add your token
+# Load environment variables from .env file
+load_dotenv()
+hf_token = os.getenv("HF_TOKEN")
+os.system(f'huggingface-cli login --token {hf_token}')
 
 # 1. Get the absolute path of the folder where app.py is located
 current_dir = os.path.dirname(os.path.abspath(__file__))
