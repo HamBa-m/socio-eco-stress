@@ -14,6 +14,8 @@
 
 ## 🏗️ Architecture
 
+![alt text](image-1.png)
+
 The system operates on a three-stage pipeline:
 
 1.  **Signal Extraction (The Filter):**
