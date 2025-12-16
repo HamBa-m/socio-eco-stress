@@ -1,6 +1,6 @@
 # 🌍 Sentinell: AI-Driven Socio-Economic Risk Forecasting
 
-**Sentinell** is a multimodal forecasting system designed as a Proof-of-Concept (PoC). It predicts the probability of social unrest and economic crises by analyzing news media. The system utilizes a hybrid architecture combining **Semantic Search (Transformer Embeddings)** for signal filtration, **Large Language Models (Llama 3.3-70B via Groq)** for quantitative reasoning, and **Logistic Regression** for predictive analytics.
+**Sentinell** is a multimodal forecasting system designed as a Proof-of-Concept (PoC). It predicts the probability of social unrest and economic crises by analyzing news media. The system utilizes a hybrid architecture combining **Semantic Search (Transformer Embeddings)** for signal filtration, **Large Language Models (Llama 3.1-8B-instant via Groq)** for quantitative reasoning, and **Logistic Regression** for predictive analytics.
 
 > **Project Status:** Workshop Material
 
@@ -26,7 +26,7 @@ The system operates on a three-stage pipeline:
 
 2.  **Quantitative Reasoning (The Analyst):**
 
-      * Feeds curated headlines into **Llama 3.3-70B (via Groq API)**.
+      * Feeds curated headlines into **Llama 3.1-8B (via Groq API)**.
       * Uses **Chain-of-Thought (CoT)** prompting (defined in `lab/prompt.txt`) to generate calibrated "Anxiety Scores" (0-10).
 
 3.  **Predictive Modeling (The Forecaster):**
@@ -135,3 +135,14 @@ If you wish to modify the training logic or prompt engineering:
 ## 📜 License
 
 This project is a workshop material for the IT Academy 2025 event at INSEA Rabat - Morocco, and is open-sourced under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+-----
+## 🚀 Future Roadmap
+
+We are actively working to move this project from an educational prototype to a robust production tool. Key milestones include:
+
+* **Moroccan Localization:** Integrating fine-tuned models and data sources for **Moroccan Darija, Arabic, and French** to capture local context and sentiment accurately.
+* **Specialized Architecture:** Transitioning from generic generative models to **Encoder-based classifiers (BERT/RoBERTa)** with domain-specific embeddings for higher statistical accuracy in financial and social scoring.
+* **Real-Time "Street" Data:** Shifting from sanitized news APIs to **Social Media Listening** (X, Reddit, Facebook) to detect unrest signals before they hit mainstream media.
+
+👉 **Want to help build this?** Check out [CONTRIBUTING.md](CONTRIBUTING.md) for the detailed technical implementation plan.
